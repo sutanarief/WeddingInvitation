@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Date from '../components/Date';
+import Time from '../components/Time'
 import { Container, Col, Row } from 'react-bootstrap';
 import { Background } from '../assets';
 
@@ -10,7 +11,7 @@ const Main = () => {
   return (
     <>
       <div className='background-main'></div>
-      <Container className='d-flex justify-content-center'>
+      <Container>
         <Col>
           <Row>
             <Header />
@@ -20,6 +21,13 @@ const Main = () => {
           </Container>
         </Col>
       </Container>
+      <div className='background-time__container'>
+        <div className='background-time'>
+          <Container>
+            <Time />
+          </Container>
+        </div>
+      </div>
     </>
   );
 };

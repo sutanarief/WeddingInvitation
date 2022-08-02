@@ -27,6 +27,12 @@
   opacity: 0.7;
 }
 
+.date-box {
+  width: 210px;
+  height: 210px;
+  background-color: "rgba(255,255,255,0.5)";
+}
+
 .wedding--name-box {
   backface-visibility: hidden;
   .wedding--name {
@@ -65,4 +71,32 @@
     transform: translateY(0px);
     opacity: 0.8;
   }
+}
+
+// Time
+.time-container {
+  display: flex;
+  justify-content: space-around;
+  .time__box {
+    padding: 10px 20px;
+    box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    .time__number{
+      font-size: 7rem;
+    }
+  }
+
+  .time__date {
+    padding: 10px 20px;
+    width: 100vw;
+
+    .text__date {
+      font-family: 'Allura', cursive;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: #2c0500;
+      opacity: 0.7;
+    }
+  }
+  
 }
