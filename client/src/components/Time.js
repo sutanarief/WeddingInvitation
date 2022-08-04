@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { BorderSection } from '../assets';
 
 const style = {
   background:
-    "linear-gradient(90deg, rgba(253,253,255,1) 0%, rgba(253,253,255,1) 51%, rgba(253,253,255,1) 100%)",
-  width: "100%",
+    'linear-gradient(90deg, rgba(253,253,255,1) 0%, rgba(253,253,255,1) 51%, rgba(253,253,255,1) 100%)',
+  width: '100%',
 };
 
 const Time = () => {
@@ -12,7 +13,7 @@ const Time = () => {
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
 
-  const countDownDate = new Date("Sept 18, 2022 08:00:00").getTime();
+  const countDownDate = new Date('Sept 18, 2022 08:00:00').getTime();
   const getTimeUntil = () => {
     let nowDate = new Date().getTime();
     let timeLeft = countDownDate - nowDate;
@@ -31,7 +32,7 @@ const Time = () => {
   };
 
   const formatter = (num) => {
-    return num < 10 ? "0" + num : num;
+    return num < 10 ? '0' + num : num;
   };
 
   useEffect(() => {
@@ -39,32 +40,46 @@ const Time = () => {
   }, []);
   return (
     <>
-      <div className="time-container">
-        <div className="time__box">
-          <span className="time__number">{formatter(days)}</span>
+      <div className='time-container'>
+        <div className='time__box'>
+          <span className='time__number'>{formatter(days)}</span>
         </div>
-        <div className="time__box">
-          <span className="time__number">{formatter(hours)}</span>
+        <div className='time__box'>
+          <span className='time__number'>{formatter(hours)}</span>
         </div>
-        <div className="time__box">
-          <span className="time__number">{formatter(minutes)}</span>
+        <div className='time__box'>
+          <span className='time__number'>{formatter(minutes)}</span>
         </div>
-        <div className="time__box">
-          <span className="time__number">{formatter(seconds)}</span>
+        <div className='time__box'>
+          <span className='time__number'>{formatter(seconds)}</span>
         </div>
       </div>
-      <div className="time-container">
-        <div className="time__date">
-          <span className="text__date">Days</span>
+      <div className='time-container'>
+        <div className='time__date'>
+          <span className='text__date'>Days</span>
         </div>
-        <div className="time__date">
-          <span className="text__date">Hours</span>
+        <div className='time__date'>
+          <span className='text__date'>Hours</span>
         </div>
-        <div className="time__date">
-          <span className="text__date">Minutes</span>
+        <div className='time__date'>
+          <span className='text__date'>Minutes</span>
         </div>
-        <div className="time__date">
-          <span className="text__date">Seconds</span>
+        <div className='time__date'>
+          <span className='text__date'>Seconds</span>
+        </div>
+      </div>
+      <div className='thankyou'>
+        <div>
+          <b>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</b>
+          <br />
+          <b>Assalamualaikum warahmatullahi wabarakatuh</b>
+          <p>
+            Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+            Bapak/Ibu/Saudara/i untuk dapat hadir di acara pernikahan kami.
+          </p>
+        </div>
+        <div className='border-section'>
+          <BorderSection className='border-section__svg' />
         </div>
       </div>
     </>

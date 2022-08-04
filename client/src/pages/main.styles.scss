@@ -14,13 +14,19 @@
 
 .background-time__container {
     position: relative; 
+    height: 619px;
     .background-time {
-        background: linear-gradient(180deg, #FFFFFF 100%, rgba(255, 255, 255, 0) 100%);
-        padding: 20px;
-        background-color: rgba(255,255,255,1);
+        padding: 220px 20px 20px 20px;
+        background: linear-gradient(360deg, white 80%
+        , transparent);
         position: absolute;
-        top: -150px;
+        top: -270px;
         left: 0;
         right: 0;
     }
+}
+
+.person__container{
+    background: #fff;
+    padding-bottom: 50px;
 }

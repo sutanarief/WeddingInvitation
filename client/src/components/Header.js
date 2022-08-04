@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <>
       <Container
-        style={{ height: '60vh' }}
+        style={{ height: '66vh' }}
         className='d-flex align-items-center justify-content-center'
       >
         <Col className='wedding'>

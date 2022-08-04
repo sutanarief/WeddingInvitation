@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import Date from '../components/Date';
-import Time from '../components/Time'
+import Time from '../components/Time';
 import { Container, Col, Row } from 'react-bootstrap';
-import { Background } from '../assets';
 
 import './main.styles.scss';
+import Person from '../components/Person';
 
 const Main = () => {
   return (
@@ -27,6 +27,11 @@ const Main = () => {
             <Time />
           </Container>
         </div>
+      </div>
+      <div className='person__container'>
+        <Container>
+          <Person />
+        </Container>
       </div>
     </>
   );
