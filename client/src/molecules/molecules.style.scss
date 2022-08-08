@@ -1,0 +1,9 @@
+.btn-brown {
+    background: #AC7088!important;
+    color: #fff!important;
+    transition: all .3s ease-out;
+
+    &:hover {
+        background: darken(#AC7088, 10%)!important;
+    }
+}
