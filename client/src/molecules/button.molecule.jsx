@@ -1,8 +1,9 @@
+import './molecules.style.scss';
 
-import './molecules.style.scss'
-
-export const ButtonBrown = ({onClick = () => {}}) => {
-    return (
-        <button onClick={onClick} className="btn btn-brown">Send</button>
-    )
-}
+export const ButtonBrown = ({ onClick = () => {}, loading }) => {
+  return (
+    <button onClick={onClick} className='btn btn-brown' disabled={loading}>
+      {loading ? 'Sending' : 'Send'}
+    </button>
+  );
+};
