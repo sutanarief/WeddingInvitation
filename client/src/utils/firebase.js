@@ -7,6 +7,7 @@ import {
   getFirestore,
   query,
   setDoc,
+  where,
   writeBatch,
 } from 'firebase/firestore';
 import { makeid } from './functions';
@@ -43,8 +44,14 @@ export const addCollection = async (messagesKey, objToAdd) => {
   }
 };
 
-export const getCollecion = async (messagesKey) => {
+export const getCollections = async (messagesKey) => {
   const q = query(collection(db, messagesKey));
+  const collections = await getDocs(q);
+  return collections;
+};
+
+export const getReply = async (id) => {
+  const q = query(collection(db, 'replies'), where('id_message', '==', id));
   const collections = await getDocs(q);
   return collections;
 };

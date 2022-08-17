@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Alert, Button } from 'react-bootstrap';
 import { ButtonBrown } from '../molecules/button.molecule';
 import { InputField } from '../molecules/input-field.molecule';
-import { addCollection, getCollecion } from '../utils/firebase';
+import { SelectField } from '../molecules/select-field.molecule';
+import { addCollection, getCollections, getReply } from '../utils/firebase';
 import { convertSecondToDate } from '../utils/functions';
 import Messages from './Messages';
 
@@ -10,10 +11,13 @@ const GuestBook = () => {
   const [hope, setHope] = useState({
     name: '',
     message: '',
+    status: '',
     createdAt: new Date(),
   });
   const [isLoading, setIsLoading] = useState(false);
   const [allMessages, setAllMessages] = useState([]);
+  const [selectedData, setSelectedData] = useState(null);
+  const [replyBar, setReplyBar] = useState(false);
 
   const onChangeHandler = (e) => {
     const { value, name } = e.target;
@@ -24,26 +28,59 @@ const GuestBook = () => {
   };
 
   const submitMessage = async () => {
-    setIsLoading(true);
-    const data = await addCollection('messages', [hope]);
-    if (data == 'sukses') {
+    if (selectedData != null) {
+      setIsLoading(true);
+      const data = await addCollection('replies', [
+        {
+          name: hope.name,
+          message: hope.message,
+          createdAt: hope.createdAt,
+          id_message: selectedData?.id || selectedData?.id_message,
+        },
+      ]);
+      getData();
+      setSelectedData(null);
       setHope({
         name: '',
         message: '',
+        status: '',
         createdAt: new Date(),
       });
       setIsLoading(false);
-      getData();
+    } else {
+      setIsLoading(true);
+      const data = await addCollection('messages', [hope]);
+      if (data == 'sukses') {
+        setHope({
+          name: '',
+          message: '',
+          status: '',
+          createdAt: new Date(),
+        });
+        setIsLoading(false);
+        getData();
+      }
     }
   };
 
   const getData = async () => {
     try {
-      let messages = await getCollecion('messages');
-      let mapMessages = messages.docs
-        .map((doc) => doc.data())
-        .sort((a, b) => b.createdAt.seconds - a.createdAt.seconds);
-      setAllMessages(mapMessages);
+      let messages = await getCollections('messages');
+      let mapMessages = messages.docs.map(async (doc) => {
+        let replies = await getReply(doc.id);
+        let mapReplies = replies.docs.map((reply) => reply.data());
+        return {
+          ...doc.data(),
+          id: doc.id,
+          repliesMsg: mapReplies,
+        };
+      });
+
+      let promiseMap = await Promise.all(mapMessages);
+      let sortMap = promiseMap?.sort(
+        (a, b) => b?.createdAt?.seconds - a?.createdAt?.seconds
+      );
+      setAllMessages(sortMap);
     } catch (err) {
       console.log(err);
     }
@@ -53,10 +90,24 @@ const GuestBook = () => {
     getData();
   }, []);
 
+  const getSelectedData = (data) => {
+    setSelectedData(data);
+  };
+
   return (
     <div>
-      <div>
+      <div id='guest-section'>
         <h3>Guest Book</h3>
+        {selectedData != null && (
+          <Alert variant='success' onClose={() => setReplyBar(!replyBar)}>
+            <div className='d-flex justify-content-between'>
+              <span>
+                Reply to <b>{selectedData?.name}</b>
+              </span>
+              <span onClick={() => setSelectedData(null)}>Close</span>
+            </div>
+          </Alert>
+        )}
       </div>
       <div>
         <InputField
@@ -76,9 +127,20 @@ const GuestBook = () => {
           as='textarea'
           rows='3'
         />
-        <ButtonBrown onClick={() => submitMessage()} loading={isLoading} />
+        <SelectField
+          onChange={(e) => onChangeHandler(e)}
+          name='status'
+          value={hope.status}
+        />
+        <div className='text-end'>
+          <ButtonBrown
+            onClick={() => submitMessage()}
+            loading={isLoading}
+            label={selectedData != null ? 'Reply' : 'Send'}
+          />
+        </div>
       </div>
-      <Messages dataMessages={allMessages} />
+      <Messages dataMessages={allMessages} selected={getSelectedData} />
     </div>
   );
 };
