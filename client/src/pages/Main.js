@@ -7,6 +7,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import './main.styles.scss';
 import Person from '../components/Person';
 import GuestBook from '../components/GuestBook';
+import Gallery from '../components/Gallery';
 
 const Main = () => {
   return (
@@ -32,6 +33,11 @@ const Main = () => {
       <div className='person__container'>
         <Container>
           <Person />
+        </Container>
+      </div>
+      <div className='gallery__container p-3'>
+        <Container fluid>
+          <Gallery />
         </Container>
       </div>
       <div className='guest-book__container'>

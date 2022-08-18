@@ -31,6 +31,14 @@
     padding-bottom: 50px;
 }
 
+.gallery__container{
+    position: relative;
+    background: #2c0500;
+    height: 300px;
+    box-shadow: 6px 6px 8px 1px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
 .guest-book__container {
     background: #fff;
     padding: 30px 0 50px 0;
