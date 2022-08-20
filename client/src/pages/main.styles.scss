@@ -34,9 +34,14 @@
 .gallery__container{
     position: relative;
     background: #2c0500;
-    height: 300px;
+    height: 400px;
     box-shadow: 6px 6px 8px 1px rgba(0,0,0,0.3);
     z-index: 1;
+}
+
+.bank__container{
+    background: #fff;
+    padding: 40px
 }
 
 .guest-book__container {

@@ -95,9 +95,9 @@ const GuestBook = () => {
   };
 
   return (
-    <div>
+    <div className='guest-book'>
       <div id='guest-section'>
-        <h3>Guest Book</h3>
+        <h3 className='text-center'>Guest Book</h3>
         {selectedData != null && (
           <Alert variant='success' onClose={() => setReplyBar(!replyBar)}>
             <div className='d-flex justify-content-between'>

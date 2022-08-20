@@ -8,6 +8,8 @@ import './main.styles.scss';
 import Person from '../components/Person';
 import GuestBook from '../components/GuestBook';
 import Gallery from '../components/Gallery';
+import Envelope from '../components/Envelope';
+import Footer from '../components/Footer';
 
 const Main = () => {
   return (
@@ -23,6 +25,7 @@ const Main = () => {
           </Container>
         </Col>
       </Container>
+
       <div className='background-time__container'>
         <div className='background-time'>
           <Container>
@@ -40,11 +43,17 @@ const Main = () => {
           <Gallery />
         </Container>
       </div>
+      <div className='bank__container'>
+        <Container>
+          <Envelope />
+        </Container>
+      </div>
       <div className='guest-book__container'>
         <Container>
           <GuestBook />
         </Container>
       </div>
+      <Footer />
     </>
   );
 };

@@ -21,7 +21,7 @@ const Messages = ({ dataMessages, selected = () => {} }) => {
   };
 
   return (
-    <div>
+    <div className='message'>
       {dataMessages?.map((data) => (
         <Fragment>
           <Card key={data.id} className='mt-3'>
