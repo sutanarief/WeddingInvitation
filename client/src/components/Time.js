@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BorderSection } from '../assets';
+import { Col, Row } from 'reactstrap';
+import { Card } from 'react-bootstrap';
+import { Resepsi, Wedding } from '../assets';
 
 const style = {
   background:
@@ -78,8 +80,61 @@ const Time = () => {
             Bapak/Ibu/Saudara/i untuk dapat hadir di acara pernikahan kami.
           </p>
         </div>
-        <div className='border-section'>
-          <BorderSection className='border-section__svg' />
+      </div>
+      <div className='akad pb-5 pt-3'>
+        <div className='akad-header pb-2'>
+          <h2>Akad dan Resepsi</h2>
+        </div>
+        <div className='mt-1'>
+          <Row>
+            <Col md={6}>
+              <Card className='p-3 bg-brown text-light'>
+                <div className='card-akad-header'>
+                  <h3>Akad</h3>
+                </div>
+                <div className='card-akad-body d-flex'>
+                  <div className='me-1'>
+                    <Wedding className='akad-thumbnail' />
+                  </div>
+                  <div>
+                    <p>Minggu, 18 September 2022 </p>
+                    <p>Pukul 10.00 WIB</p> <p>Kediaman Mempelai Wanita</p>
+                    <p>
+                      Jln. Kerapu 2 RT 007 RW 001 Kel. Pluit Kec. Penjaringan,
+                      Jakarta Utara 14450
+                    </p>
+                    <button className='btn btn-light mt-2'>
+                      Lihat Di Peta
+                    </button>
+                  </div>
+                </div>
+              </Card>
+            </Col>
+            <Col md={6}>
+              <Card className='p-3 bg-brown text-light'>
+                <div className='card-akad-header'>
+                  <h3>Resepsi</h3>
+                </div>
+                <div className='card-akad-body d-flex'>
+                  <div className='me-1'>
+                    <Resepsi className='akad-thumbnail' />
+                  </div>
+                  <div>
+                    <p>Minggu, 18 September 2022 </p>
+                    <p>Pukul 12.00 WIB s/d 21:00 WIB</p>{' '}
+                    <p>Kediaman Mempelai Wanita</p>
+                    <p>
+                      Jln. Kerapu 2 RT 007 RW 001 Kel. Pluit Kec. Penjaringan,
+                      Jakarta Utara 14450
+                    </p>
+                    <button className='btn btn-light mt-2'>
+                      Lihat Di Peta
+                    </button>
+                  </div>
+                </div>
+              </Card>
+            </Col>
+          </Row>
         </div>
       </div>
     </>

@@ -12,17 +12,21 @@
     z-index: -1;
 }
 
+.background-gradient-white{
+    position: absolute;
+    z-index: 1;
+    bottom: -150px;
+    left: 0;
+    right: 0;
+    height: 35%;
+    background: linear-gradient(360deg, white 50%, transparent);;
+}
+
 .background-time__container {
-    position: relative; 
-    height: 619px;
+    position: relative;
     .background-time {
-        padding: 220px 20px 20px 20px;
-        background: linear-gradient(360deg, white 80%
-        , transparent);
-        position: absolute;
-        top: -270px;
-        left: 0;
-        right: 0;
+        padding: 0px 20px 20px 20px;
+        background: #fff;
     }
 }
 

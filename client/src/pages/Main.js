@@ -15,6 +15,7 @@ const Main = () => {
   return (
     <>
       <div className='background-main'></div>
+      <div className='background-gradient-white'></div>
       <Container>
         <Col>
           <Row>
