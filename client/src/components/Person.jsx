@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 import Rings from '../assets/wedding-rings.png'
+import Mempelai from '../assets/background.jpg'
 
 const Person = () => {
   return (
@@ -14,7 +15,7 @@ const Person = () => {
       </div>
     <Row className="px-5">
       <Col md={6}>
-        <div className='person__picture person__picture-1'></div>
+        <img src={Mempelai} className='person__picture person__picture-1' />
         <div className='person__qoute person__qoute-1'>
           <FontAwesomeIcon icon={faQuoteLeft} />
           <i>
@@ -41,8 +42,7 @@ const Person = () => {
           </i>
           <FontAwesomeIcon icon={faQuoteRight} />
         </div>
-        <div className='person__picture person__picture-2'>
-        </div>
+        <img src={Mempelai} className='person__picture person__picture-2' />
       </Col>
     </Row>
     </Fragment>

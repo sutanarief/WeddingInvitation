@@ -40,6 +40,12 @@ const Time = () => {
   useEffect(() => {
     setInterval(() => getTimeUntil(), 1000);
   }, []);
+
+  const goToAddress = () => {
+    window.location.assign(
+      'https://www.google.com/maps/search/Jln.+Kerapu+2+RT+007+RW+001+Kel.+Pluit+Kec.+Penjaringan,+Jakarta+Utara+14450/@-6.1106792,106.7715821,17z'
+    );
+  };
   return (
     <>
       <div className='time-container'>
@@ -87,39 +93,42 @@ const Time = () => {
         </div>
         <div className='mt-1'>
           <Row>
-            <Col md={6}>
-              <Card className='p-3 bg-brown text-light'>
+            <Col md={6} sm={12}>
+              <Card className='p-3 bg-brown text-light mb-2'>
                 <div className='card-akad-header'>
                   <h3>Akad</h3>
                 </div>
-                <div className='card-akad-body d-flex'>
-                  <div className='me-1'>
+                <Row className='card-akad-body'>
+                  <Col md={4} sm={12} xs={12} className='me-1'>
                     <Wedding className='akad-thumbnail' />
-                  </div>
-                  <div>
+                  </Col>
+                  <Col md={7} sm={12} xs={12}>
                     <p>Minggu, 18 September 2022 </p>
                     <p>Pukul 10.00 WIB</p> <p>Kediaman Mempelai Wanita</p>
                     <p>
                       Jln. Kerapu 2 RT 007 RW 001 Kel. Pluit Kec. Penjaringan,
                       Jakarta Utara 14450
                     </p>
-                    <button className='btn btn-light mt-2'>
+                    <button
+                      className='btn btn-light mt-2'
+                      onClick={() => goToAddress()}
+                    >
                       Lihat Di Peta
                     </button>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </Card>
             </Col>
-            <Col md={6}>
+            <Col md={6} sm={12}>
               <Card className='p-3 bg-brown text-light'>
                 <div className='card-akad-header'>
                   <h3>Resepsi</h3>
                 </div>
-                <div className='card-akad-body d-flex'>
-                  <div className='me-1'>
+                <Row className='card-akad-body'>
+                  <Col md={4} sm={12} xs={12} className='me-1'>
                     <Resepsi className='akad-thumbnail' />
-                  </div>
-                  <div>
+                  </Col>
+                  <Col md={7} sm={12} xs={12}>
                     <p>Minggu, 18 September 2022 </p>
                     <p>Pukul 12.00 WIB s/d 21:00 WIB</p>{' '}
                     <p>Kediaman Mempelai Wanita</p>
@@ -127,11 +136,14 @@ const Time = () => {
                       Jln. Kerapu 2 RT 007 RW 001 Kel. Pluit Kec. Penjaringan,
                       Jakarta Utara 14450
                     </p>
-                    <button className='btn btn-light mt-2'>
+                    <button
+                      className='btn btn-light mt-2'
+                      onClick={() => goToAddress()}
+                    >
                       Lihat Di Peta
                     </button>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </Card>
             </Col>
           </Row>

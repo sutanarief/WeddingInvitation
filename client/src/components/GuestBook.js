@@ -7,7 +7,7 @@ import { addCollection, getCollections, getReply } from '../utils/firebase';
 import { convertSecondToDate } from '../utils/functions';
 import Messages from './Messages';
 
-const GuestBook = () => {
+const GuestBook = ({ getMessages }) => {
   const [hope, setHope] = useState({
     name: '',
     message: '',
@@ -39,6 +39,7 @@ const GuestBook = () => {
         },
       ]);
       getData();
+      getMessages('Pesan berhasil di kirim!', true);
       setSelectedData(null);
       setHope({
         name: '',
@@ -59,6 +60,7 @@ const GuestBook = () => {
         });
         setIsLoading(false);
         getData();
+        getMessages('Pesan berhasil di kirim!', true);
       }
     }
   };

@@ -7,3 +7,24 @@
         background: darken(#AC7088, 10%)!important;
     }
 }
+
+.alert-wedding{
+    background: #AC7088;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.3);
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    display: table;
+    color: #fff;
+    transform: translateY(200px);
+    transition: transform 0.3s ease-out;
+}
+
+.show-alert{
+    transform: translateY(0);
+}

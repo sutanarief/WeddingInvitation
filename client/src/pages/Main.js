@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Date from '../components/Date';
 import Time from '../components/Time';
@@ -10,10 +10,26 @@ import GuestBook from '../components/GuestBook';
 import Gallery from '../components/Gallery';
 import Envelope from '../components/Envelope';
 import Footer from '../components/Footer';
+import Alert from '../molecules/alert.molecule';
 
 const Main = () => {
+  const [message, setMessage] = useState('');
+  const [isActive, setIsActive] = useState(false);
+
+  const handleMessage = (msg, active) => {
+    console.log(msg);
+    setMessage(msg);
+    setIsActive(active);
+    setInterval(() => {
+      setIsActive(false);
+    }, 5000);
+  };
+
+  console.log(message);
+
   return (
     <>
+      <Alert message={message} isActive={isActive} />
       <div className='background-main'></div>
       <div className='background-gradient-white'></div>
       <Container>
@@ -21,9 +37,6 @@ const Main = () => {
           <Row>
             <Header />
           </Row>
-          <Container className='d-flex justify-content-center'>
-            <Date />
-          </Container>
         </Col>
       </Container>
 
@@ -46,12 +59,12 @@ const Main = () => {
       </div>
       <div className='bank__container'>
         <Container>
-          <Envelope />
+          <Envelope getMessages={handleMessage} />
         </Container>
       </div>
       <div className='guest-book__container'>
         <Container>
-          <GuestBook />
+          <GuestBook getMessages={handleMessage} />
         </Container>
       </div>
       <Footer />

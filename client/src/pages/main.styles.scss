@@ -14,18 +14,17 @@
 
 .background-gradient-white{
     position: absolute;
-    z-index: 1;
-    bottom: -150px;
+    bottom: -10px;
     left: 0;
     right: 0;
     height: 35%;
-    background: linear-gradient(360deg, white 50%, transparent);;
+    background: linear-gradient(360deg, white 30%, transparent);;
 }
 
 .background-time__container {
     position: relative;
     .background-time {
-        padding: 0px 20px 20px 20px;
+        padding: 20px;
         background: #fff;
     }
 }

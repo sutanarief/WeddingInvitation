@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +9,19 @@ import BCALogo from '../assets/bca.png';
 import './component.styles.scss'
 import { faMap } from '@fortawesome/free-regular-svg-icons';
 
-const Envelope = () => {
+const Envelope = ({getMessages}) => {
+
+  const [state] = useState({
+    bca: '123123123123',
+    dana: '090098990890'
+  });
+
+  const copyToClipboard = (noRek) => {
+    navigator.clipboard.writeText(noRek).then(result => {
+      getMessages('No rekening telah disalin', true)
+    });
+  }
+
   return (
     <div className='emvelope'>
       <div className='pb-3'>
@@ -17,19 +29,19 @@ const Envelope = () => {
         <p>Bagi yang berkeinginan memberikan kado pernikahan atau tanda kasih, kami juga menyediakan amplop digital pada link di bawah ini.</p>
       </div>
       <Row>
-        <Col md={6}>
-          <Card className="envelope-card bg-primary text-white pb-3">
+        <Col md={6} sm={12}>
+          <Card className="envelope-card bg-primary text-white pb-3 mb-2">
             <div className='bank-logo'>
               <img src={BCALogo} />
             </div>
             <div className="bank-info mt-3">
                 <h5 className='mb-1'>Nama Lengkap</h5>
                 <h5 className='mb-3'>1234567891</h5>
-                <button className='btn btn-outline-light'>Salin Nomor Rekening</button>
+                <button className='btn btn-outline-light' onClick={() => copyToClipboard(state.bca)}>Salin Nomor Rekening</button>
             </div>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col md={6} sm={12}>
           <Card className="envelope-card bg-info text-white pb-3">
             <div className='bank-logo'>
               <img src={DanaLogo} />
@@ -37,7 +49,7 @@ const Envelope = () => {
             <div className="bank-info mt-3">
                 <h5 className='mb-1'>Nama Lengkap</h5>
                 <h5 className='mb-3'>1234567891</h5>
-                <button className='btn btn-outline-light'>Salin Nomor Rekening</button>
+                <button className='btn btn-outline-light' onClick={() => copyToClipboard(state.dana)}>Salin Nomor Rekening</button>
             </div>
           </Card>
         </Col>

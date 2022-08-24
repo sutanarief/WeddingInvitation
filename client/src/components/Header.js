@@ -25,19 +25,23 @@ const Header = () => {
   return (
     <>
       <Container
-        style={{ height: '66vh' }}
+        style={{ height: '89vh' }}
         className='d-flex align-items-center justify-content-center'
       >
-        <Col className='wedding'>
+        <div className='wedding'>
           <div className='wedding--name-box'>
-            <Col style={style} className='wedding--name'>
+            <h1 style={style} className='wedding--name'>
               Shohib & Pratiwi
-            </Col>
+            </h1>
           </div>
-          <Col style={styleWed} className='wedding--invite'>
+          <div style={styleWed} className='wedding--invite'>
             Wedding Invitation
-          </Col>
-        </Col>
+          </div>
+          <div className='circle-date'>
+            <div className='date-text'>Save the date</div>
+            <div className='date'>18 September 2022</div>
+          </div>
+        </div>
       </Container>
     </>
   );
