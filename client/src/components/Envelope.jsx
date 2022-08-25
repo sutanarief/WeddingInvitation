@@ -8,6 +8,7 @@ import BCALogo from '../assets/bca.png';
 
 import './component.styles.scss'
 import { faMap } from '@fortawesome/free-regular-svg-icons';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 const Envelope = ({getMessages}) => {
 
@@ -15,6 +16,8 @@ const Envelope = ({getMessages}) => {
     bca: '123123123123',
     dana: '090098990890'
   });
+
+  const [alamat] = useState('Jl. Pendaratan Udang No.10, Pluit, Kec. Penjaringan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta')
 
   const copyToClipboard = (noRek) => {
     navigator.clipboard.writeText(noRek).then(result => {
@@ -36,8 +39,8 @@ const Envelope = ({getMessages}) => {
             </div>
             <div className="bank-info mt-3">
                 <h5 className='mb-1'>Nama Lengkap</h5>
-                <h5 className='mb-3'>1234567891</h5>
-                <button className='btn btn-outline-light' onClick={() => copyToClipboard(state.bca)}>Salin Nomor Rekening</button>
+                <h5 className='mb-3'>{state.bca}</h5>
+                <button className='btn btn-outline-light' onClick={() => copyToClipboard(state.bca)}><FontAwesomeIcon icon={faCopy} /> Salin Nomor Rekening</button>
             </div>
           </Card>
         </Col>
@@ -48,8 +51,8 @@ const Envelope = ({getMessages}) => {
             </div>
             <div className="bank-info mt-3">
                 <h5 className='mb-1'>Nama Lengkap</h5>
-                <h5 className='mb-3'>1234567891</h5>
-                <button className='btn btn-outline-light' onClick={() => copyToClipboard(state.dana)}>Salin Nomor Rekening</button>
+                <h5 className='mb-3'>{state.dana}</h5>
+                <button className='btn btn-outline-light' onClick={() => copyToClipboard(state.dana)}><FontAwesomeIcon icon={faCopy} /> Salin Nomor Rekening</button>
             </div>
           </Card>
         </Col>
@@ -61,7 +64,8 @@ const Envelope = ({getMessages}) => {
               </h4>
             </div>
             <div className="bank-info mt-3">
-                <h5 className='mb-1'>Jl. Pendaratan Udang No.10, Pluit, Kec. Penjaringan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta</h5>
+                <h5 className='mb-1'>{alamat}</h5>
+                <button className='btn btn-outline-dark mt-3' onClick={() => copyToClipboard(state.dana)}><FontAwesomeIcon icon={faCopy} /> Salin Alamat</button>
             </div>
           </Card>
         </Col>

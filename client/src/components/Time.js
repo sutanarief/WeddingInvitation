@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Col, Row } from 'reactstrap';
 import { Card } from 'react-bootstrap';
 import { Resepsi, Wedding } from '../assets';
+import { faMap } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const style = {
   background:
@@ -110,10 +112,10 @@ const Time = () => {
                       Jakarta Utara 14450
                     </p>
                     <button
-                      className='btn btn-light mt-2'
+                      className='btn btn-light mt-3'
                       onClick={() => goToAddress()}
                     >
-                      Lihat Di Peta
+                      <FontAwesomeIcon icon={faMap} /> Lihat Di Peta
                     </button>
                   </Col>
                 </Row>
@@ -137,10 +139,10 @@ const Time = () => {
                       Jakarta Utara 14450
                     </p>
                     <button
-                      className='btn btn-light mt-2'
+                      className='btn btn-light mt-3'
                       onClick={() => goToAddress()}
                     >
-                      Lihat Di Peta
+                      <FontAwesomeIcon icon={faMap} /> Lihat Di Peta
                     </button>
                   </Col>
                 </Row>

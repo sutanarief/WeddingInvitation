@@ -3,7 +3,6 @@ import { Container, Col } from 'react-bootstrap';
 
 const style = {
   fontWeight: '1000',
-  fontSize: '100px',
   color: '#2c0500',
   opacity: '0.8',
 };
@@ -24,10 +23,7 @@ const divStyle = {
 const Header = () => {
   return (
     <>
-      <Container
-        style={{ height: '89vh' }}
-        className='d-flex align-items-center justify-content-center'
-      >
+      <Container className='d-flex align-items-center justify-content-center home'>
         <div className='wedding'>
           <div className='wedding--name-box'>
             <h1 style={style} className='wedding--name'>

@@ -96,6 +96,8 @@ const GuestBook = ({ getMessages }) => {
     setSelectedData(data);
   };
 
+  console.log(allMessages);
+
   return (
     <div className='guest-book'>
       <div id='guest-section'>
@@ -138,7 +140,7 @@ const GuestBook = ({ getMessages }) => {
           <ButtonBrown
             onClick={() => submitMessage()}
             loading={isLoading}
-            label={selectedData != null ? 'Reply' : 'Send'}
+            label='Kirim'
           />
         </div>
       </div>

@@ -20,6 +20,14 @@ const Messages = ({ dataMessages, selected = () => {} }) => {
     if (status == 'Ragu-ragu') return 'text-warning';
   };
 
+  const getFirstCharacter = (char) => {
+    let newChar = char
+      .split(' ')
+      .map((val) => val[0])
+      .join('');
+    return newChar;
+  };
+
   return (
     <div className='message'>
       {dataMessages?.map((data) => (
@@ -41,15 +49,23 @@ const Messages = ({ dataMessages, selected = () => {} }) => {
               </div>
             </Card.Header>
             <Card.Body>
-              <div>
-                <p>{data.message}</p>
-              </div>
-              <div>
-                <ButtonBrown
-                  onClick={() => onReply(data)}
-                  label='Reply'
-                  size='btn-sm'
-                />
+              <div className='d-flex'>
+                <div className='me-2 message-photo-profile'>
+                  <h1>{getFirstCharacter(data.name)}</h1>
+                </div>
+                <div className='flex-fill'>
+                  <div>
+                    {/* <span>{data.createdAt}</span> */}
+                    <p>{data.message}</p>
+                  </div>
+                  <div className='text-end'>
+                    <ButtonBrown
+                      onClick={() => onReply(data)}
+                      label='Balas'
+                      size='btn-sm'
+                    />
+                  </div>
+                </div>
               </div>
             </Card.Body>
           </Card>
@@ -63,15 +79,22 @@ const Messages = ({ dataMessages, selected = () => {} }) => {
                     </div>
                   </Card.Header>
                   <Card.Body>
-                    <div>
-                      <p>{reply.message}</p>
-                    </div>
-                    <div>
-                      <ButtonBrown
-                        onClick={() => onReply(reply)}
-                        label='Reply'
-                        size='btn-sm'
-                      />
+                    <div className='d-flex'>
+                      <div className='me-2 message-photo-profile'>
+                        <h1>{getFirstCharacter(reply.name)}</h1>
+                      </div>
+                      <div className='flex-fill'>
+                        <div>
+                          <p>{reply.message}</p>
+                        </div>
+                        <div className='text-end'>
+                          <ButtonBrown
+                            onClick={() => onReply(reply)}
+                            label='Balas'
+                            size='btn-sm'
+                          />
+                        </div>
+                      </div>
                     </div>
                   </Card.Body>
                 </Card>

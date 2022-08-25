@@ -32,7 +32,7 @@ const Main = () => {
       <Alert message={message} isActive={isActive} />
       <div className='background-main'></div>
       <div className='background-gradient-white'></div>
-      <Container>
+      <Container id='home'>
         <Col>
           <Row>
             <Header />
@@ -40,14 +40,14 @@ const Main = () => {
         </Col>
       </Container>
 
-      <div className='background-time__container'>
+      <div className='background-time__container' id='date'>
         <div className='background-time'>
           <Container>
             <Time />
           </Container>
         </div>
       </div>
-      <div className='person__container'>
+      <div className='person__container' id='couple'>
         <Container>
           <Person />
         </Container>
@@ -57,12 +57,12 @@ const Main = () => {
           <Gallery />
         </Container>
       </div>
-      <div className='bank__container'>
+      <div className='bank__container' id='digitalenvelope'>
         <Container>
           <Envelope getMessages={handleMessage} />
         </Container>
       </div>
-      <div className='guest-book__container'>
+      <div className='guest-book__container' id='guestbook'>
         <Container>
           <GuestBook getMessages={handleMessage} />
         </Container>

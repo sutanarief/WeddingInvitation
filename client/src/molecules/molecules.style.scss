@@ -1,15 +1,15 @@
 .btn-brown {
-    background: #AC7088!important;
+    background: #2c0500!important;
     color: #fff!important;
     transition: all .3s ease-out;
 
     &:hover {
-        background: darken(#AC7088, 10%)!important;
+        background: darken(#2c0500, 10%)!important;
     }
 }
 
 .alert-wedding{
-    background: #AC7088;
+    background: #2c0500;
     position: fixed;
     z-index: 1000;
     border-radius: 10px;

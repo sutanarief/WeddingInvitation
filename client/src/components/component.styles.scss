@@ -3,6 +3,21 @@
 }
 
 // Navbar
+.bg-navbar {
+  background: #fff;
+  width: 100vw;
+  height: 70px;
+  position: fixed;
+  z-index: 2;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(-100px);
+  transition: all 0.3s ease-out;
+}
+
+.bg-navbar-open {
+  transform: translateY(0);
+}
+
 .wedding--brand {
   font-family: 'Allura', cursive;
   font-weight: 800;
@@ -12,9 +27,31 @@
 .navbar--links {
   color: #2c0500;
   font-weight: 500;
+  .wedding-brand-mobile {
+    background: #2c0500;
+    padding: 10px 15px 5px 15px;
+    border-radius: 20px;
+    h3 {
+      color: #fff;
+      font-family: 'Allura', cursive;
+      font-weight: 800;
+      font-size: 30px !important;
+      margin: 0;
+    }
+  }
+  .icon-mobile{
+    font-size: 30px;
+    padding: 5px 7px;
+  }
 }
 
-// Date
+.home{
+  height: 100vh;
+  @media (max-width: 688px) {
+    height: 88vh;
+  }
+}
+
 .date-text {
   font-family: 'Allura', cursive;
   font-size: 25px;
@@ -35,16 +72,22 @@
   z-index: 1;
 }
 
-.circle-date{
+.circle-date {
   width: 300px;
   height: 300px;
   background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: rgba(0,0,0,.1) 0px 0px 16px 4px;
-  padding-top: 60px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 16px 4px;
+  padding-top: 200px;
   align-content: center;
-  border-radius: 50%;
-  transform: translateY(180px);
+  clip-path: circle(50% at 150px 300px);
   margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @media (max-width: 688px) {
+    bottom: 75px;
+  }
 }
 
 .date-box {
@@ -57,6 +100,19 @@
   backface-visibility: hidden;
   .wedding--name {
     animation: weddingName 2s ease-out;
+    font-size: 100px;
+    @media (max-width: 576px) {
+      font-size: 50px;
+    }
+    @media (min-width: 576px) {
+      font-size: 60px;
+    }
+    @media (min-width: 768px) {
+      font-size: 80px;
+    }
+    @media (min-width: 992px) {
+      font-size: 100px;
+    }
   }
 }
 
@@ -103,16 +159,16 @@
     border-radius: 6px;
     .time__number {
       font-size: 7rem;
-      @media (max-width: 576px) { 
+      @media (max-width: 576px) {
         font-size: 2rem;
       }
-      @media (min-width: 576px) { 
+      @media (min-width: 576px) {
         font-size: 4rem;
       }
-      @media (min-width: 768px) { 
+      @media (min-width: 768px) {
         font-size: 5rem;
       }
-      @media (min-width: 992px) { 
+      @media (min-width: 992px) {
         font-size: 7rem;
       }
     }
@@ -128,16 +184,16 @@
       font-weight: 600;
       color: #2c0500;
       opacity: 0.7;
-      @media (max-width: 576px) { 
+      @media (max-width: 576px) {
         font-size: 1rem;
       }
-      @media (min-width: 576px) { 
+      @media (min-width: 576px) {
         font-size: 2rem;
       }
-      @media (min-width: 768px) { 
+      @media (min-width: 768px) {
         font-size: 3rem;
       }
-      @media (min-width: 992px) { 
+      @media (min-width: 992px) {
         font-size: 3.5rem;
       }
     }
@@ -148,8 +204,8 @@
   margin-top: 50px;
 }
 .akad {
-  .akad-header{
-    h2{
+  .akad-header {
+    h2 {
       font-family: 'Allura', cursive;
       font-weight: 600;
     }
@@ -265,7 +321,20 @@
     font-size: 40px;
   }
 }
-
+.message-photo-profile{
+  background: #2c0500;
+  padding: 10px;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  h1{
+    color: #fff;
+    margin: 0;
+    line-height: 50px;
+    vertical-align: middle;
+  }
+}
 .message {
   height: 500px;
   overflow-y: auto;
@@ -300,18 +369,22 @@
     padding-top: 30px;
   }
 }
-.copyright{
+.copyright {
   background: #2c0500;
   color: #fff;
   padding: 20px;
-  .social-media-container{
+  margin-bottom: 0;
+  @media (max-width: 688px) {
+    margin-bottom: 80px;
+  }
+  .social-media-container {
     margin-bottom: 20px;
-    .social-media{
+    .social-media {
       margin-top: 10px;
-      span{
+      span {
         font-size: 30px;
         margin-right: 10px;
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
       }
