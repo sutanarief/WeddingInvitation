@@ -22,7 +22,7 @@ const MobileNav = () => {
   return (
     <>
       <div className='bg-navbar'></div>
-      <Navbar bg='white' fixed='bottom'>
+      <Navbar bg='white' fixed='bottom' className="mobile-nav">
         <Container>
           <Nav className='m-auto'>
             {links.map((link, i) => (

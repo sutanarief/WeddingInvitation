@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment } from 'react';
 import { Card } from 'react-bootstrap';
 import { ButtonBrown } from '../molecules/button.molecule';
+import { convertSecondToDate, readebleDate } from '../utils/functions';
 
 const Messages = ({ dataMessages, selected = () => {} }) => {
   const onReply = (data) => {
@@ -55,10 +56,14 @@ const Messages = ({ dataMessages, selected = () => {} }) => {
                 </div>
                 <div className='flex-fill'>
                   <div>
-                    {/* <span>{data.createdAt}</span> */}
-                    <p>{data.message}</p>
+                    <p className='mb-3'>{data.message}</p>
                   </div>
-                  <div className='text-end'>
+                  <div className='d-flex justify-content-between'>
+                    <span className='text-muted'>
+                      {readebleDate(
+                        convertSecondToDate(data.createdAt.seconds)
+                      )}
+                    </span>
                     <ButtonBrown
                       onClick={() => onReply(data)}
                       label='Balas'
@@ -87,7 +92,12 @@ const Messages = ({ dataMessages, selected = () => {} }) => {
                         <div>
                           <p>{reply.message}</p>
                         </div>
-                        <div className='text-end'>
+                        <div className='d-flex justify-content-between'>
+                          <span className='text-muted'>
+                            {readebleDate(
+                              convertSecondToDate(data.createdAt.seconds)
+                            )}
+                          </span>
                           <ButtonBrown
                             onClick={() => onReply(reply)}
                             label='Balas'

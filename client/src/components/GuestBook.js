@@ -28,6 +28,10 @@ const GuestBook = ({ getMessages }) => {
   };
 
   const submitMessage = async () => {
+    const { name, message, status } = hope;
+    if (name == '' || message == '' || status == '') {
+      return getMessages('Pastikan semua data di isi!', true);
+    }
     if (selectedData != null) {
       setIsLoading(true);
       const data = await addCollection('replies', [

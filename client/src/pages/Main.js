@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Date from '../components/Date';
 import Time from '../components/Time';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row, Button } from 'react-bootstrap';
 
 import './main.styles.scss';
 import Person from '../components/Person';
@@ -11,24 +11,41 @@ import Gallery from '../components/Gallery';
 import Envelope from '../components/Envelope';
 import Footer from '../components/Footer';
 import Alert from '../molecules/alert.molecule';
+import { useAudio } from '../utils/functions';
+import Monolog from '../assets/Monolog.mp3';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import Welcome from '../components/Welcome';
 
 const Main = () => {
   const [message, setMessage] = useState('');
   const [isActive, setIsActive] = useState(false);
 
-  const handleMessage = (msg, active) => {
-    console.log(msg);
-    setMessage(msg);
-    setIsActive(active);
+  const [audio] = useState(new Audio(Monolog));
+  const [playing, setPlaying] = useState(true);
+
+  // useEffect(() => {
+  //   playing ? audio.play() : audio.pause();
+  // }, [playing]);
+
+  useEffect(() => {
     setInterval(() => {
       setIsActive(false);
     }, 5000);
-  };
+  }, [message]);
 
-  console.log(message);
+  const handleMessage = (msg, active) => {
+    if (message || isActive) {
+      setMessage('');
+      setIsActive(false);
+    }
+    setMessage(msg);
+    setIsActive(active);
+  };
 
   return (
     <>
+      <Welcome />
       <Alert message={message} isActive={isActive} />
       <div className='background-main'></div>
       <div className='background-gradient-white'></div>
@@ -68,6 +85,13 @@ const Main = () => {
         </Container>
       </div>
       <Footer />
+      <div onClick={() => setPlaying(!playing)} className='btn-play'>
+        {playing ? (
+          <FontAwesomeIcon icon={faPause} />
+        ) : (
+          <FontAwesomeIcon icon={faPlay} />
+        )}
+      </div>
     </>
   );
 };
