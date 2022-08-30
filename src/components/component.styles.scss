@@ -13,10 +13,18 @@
   padding: 100px;
   transform: translateY(0);
   transition: all 0.3s ease-out;
+  overflow: hidden;
+  @media (max-width: 688px) {
+    padding: 80px 20px;
+  }
   h1{
     font-family: 'Allura', cursive;
     font-weight: bolder;
     font-size: 100px;
+    
+    @media (max-width: 688px) {
+      font-size: 60px;
+    }
   }
   .to{
     margin-top: 100px;

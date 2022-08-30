@@ -22,11 +22,11 @@ const Main = () => {
   const [isActive, setIsActive] = useState(false);
 
   const [audio] = useState(new Audio(Monolog));
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
 
-  // useEffect(() => {
-  //   playing ? audio.play() : audio.pause();
-  // }, [playing]);
+  useEffect(() => {
+    playing ? audio.play() : audio.pause();
+  }, [playing]);
 
   useEffect(() => {
     setInterval(() => {
@@ -43,9 +43,13 @@ const Main = () => {
     setIsActive(active);
   };
 
+  const playMusic = () => {
+    setPlaying(true);
+  };
+
   return (
     <>
-      <Welcome />
+      <Welcome playMusic={playMusic} />
       <Alert message={message} isActive={isActive} />
       <div className='background-main'></div>
       <div className='background-gradient-white'></div>
