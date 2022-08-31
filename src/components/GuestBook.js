@@ -8,8 +8,10 @@ import { convertSecondToDate } from '../utils/functions';
 import Messages from './Messages';
 
 const GuestBook = ({ getMessages }) => {
+  const params = new URLSearchParams(window.location.search);
+  const [guest] = useState(params.get('guest') || '');
   const [hope, setHope] = useState({
-    name: '',
+    name: guest,
     message: '',
     status: '',
     createdAt: new Date(),

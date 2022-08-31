@@ -44,8 +44,9 @@ const Time = () => {
   }, []);
 
   const goToAddress = () => {
-    window.location.assign(
-      'https://www.google.com/maps/search/Jln.+Kerapu+2+RT+007+RW+001+Kel.+Pluit+Kec.+Penjaringan,+Jakarta+Utara+14450/@-6.1106792,106.7715821,17z'
+    window.open(
+      'https://www.google.com/maps/search/Jln.+Kerapu+2+RT+007+RW+001+Kel.+Pluit+Kec.+Penjaringan,+Jakarta+Utara+14450/@-6.1106792,106.7715821,17z',
+      '_blank'
     );
   };
   return (
