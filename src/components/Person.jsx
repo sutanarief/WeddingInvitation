@@ -17,30 +17,14 @@ const Person = () => {
       <Col md={6}>
         <img src={Mempelai} className='person__picture person__picture-1' />
         <div className='person__qoute person__qoute-1'>
-          <FontAwesomeIcon icon={faQuoteLeft} />
-          <i>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            pellentesque sit amet ante eu gravida. Donec eget enim tincidunt
-            augue volutpat faucibus in id est. Maecenas mi enim, commodo eget
-            sagittis quis, pulvinar a odio. Maecenas efficitur mi sem, sed
-            luctus magna congue nec. Suspendisse potenti. Sed interdum leo at
-            diam commodo ultricies. Nam posuere nec mi sit amet euismod.
-          </i>
-          <FontAwesomeIcon icon={faQuoteRight} />
+          <h4>Pratiwi Rudiansyah A.Md.A.B</h4>
+          <p>Putri Pertama dari Bpk Rudy Hartono dan Ibu Partinah Landjar</p>
         </div>
       </Col>
       <Col md={6}>
         <div className='person__qoute mt-5'>
-        <FontAwesomeIcon icon={faQuoteLeft} />
-          <i>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            pellentesque sit amet ante eu gravida. Donec eget enim tincidunt
-            augue volutpat faucibus in id est. Maecenas mi enim, commodo eget
-            sagittis quis, pulvinar a odio. Maecenas efficitur mi sem, sed
-            luctus magna congue nec. Suspendisse potenti. Sed interdum leo at
-            diam commodo ultricies. Nam posuere nec mi sit amet euismod.
-          </i>
-          <FontAwesomeIcon icon={faQuoteRight} />
+          <h4>Muhammad Shohib</h4>
+          <p>Putra ke Terakhir dari Alm. Bph H. Ngateman dan Ibu Hj. Zuchrotin</p>
         </div>
         <img src={Mempelai} className='person__picture person__picture-2' />
       </Col>

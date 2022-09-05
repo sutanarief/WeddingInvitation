@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Border } from '../assets';
 
 const Welcome = ({ playMusic }) => {
   const params = new URLSearchParams(window.location.search);

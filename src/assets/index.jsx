@@ -4,5 +4,6 @@ import { ReactComponent as Wedding } from './wedding.svg';
 import { ReactComponent as Resepsi } from './resepsi.svg';
 import { ReactComponent as Instagram } from './instagram-brands.svg';
 import { ReactComponent as Github } from './github-brands.svg';
+import { ReactComponent as Border } from './border.svg';
 
-export { Background, BorderSection, Wedding, Resepsi, Instagram, Github };
+export { Background, BorderSection, Wedding, Resepsi, Instagram, Github, Border };  
