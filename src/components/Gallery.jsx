@@ -3,6 +3,11 @@ import React, { Fragment } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import Gallery1 from '../assets/photo-1.JPG';
+import Gallery4 from '../assets/photo-4.JPG';
+import Gallery5 from '../assets/photo-5.JPG';
+import Gallery6 from '../assets/photo-6.JPG';
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -36,19 +41,16 @@ const Gallery = () => {
         autoPlaySpeed={3000}
       >
         <div className='image-wedding-container'>
-          <img src='https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80' />
+          <div style={{backgroundImage: `url(${Gallery1})`}} className="image-wedding-container__image" ></div>
         </div>
         <div className='image-wedding-container'>
-          <img src='https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80' />
+          <div style={{backgroundImage: `url(${Gallery4})`}} className="image-wedding-container__image" ></div>
         </div>
         <div className='image-wedding-container'>
-          <img src='https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80' />
+          <div style={{backgroundImage: `url(${Gallery5})`}} className="image-wedding-container__image" ></div>
         </div>
         <div className='image-wedding-container'>
-          <img src='https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80' />
-        </div>
-        <div className='image-wedding-container'>
-          <img src='https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80' />
+          <div style={{backgroundImage: `url(${Gallery6})`}} className="image-wedding-container__image" ></div>
         </div>
       </Carousel>
     </Fragment>

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { Border } from '../assets';
 
+import Love from '../assets/love-logo.png'
+
 const Welcome = ({ playMusic }) => {
   const params = new URLSearchParams(window.location.search);
 
@@ -16,6 +18,7 @@ const Welcome = ({ playMusic }) => {
   return (
     <div className={`welcome text-white ${open ? 'open' : ''}`}>
       <h1>Undangan Pernikahan</h1>
+      <img src={Love} className="welcome__love-logo" alt='Love' />
       {guest && (
         <div className='to'>
           <span>Kepada </span>
