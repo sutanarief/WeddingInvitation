@@ -25,7 +25,7 @@ const Welcome = ({ playMusic }) => {
           <span>{guest}</span>
         </div>
       )}
-      <p>
+      <p  style={{fontSize: '15px'}}>
         Tanpa Mengurangi Rasa Hormat Kami Mengundang Anda Untuk Berhadir Di
         Acara Pernikahan Kami.
       </p>

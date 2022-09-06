@@ -328,6 +328,10 @@
   border-radius: 10px;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  @media (max-width: 576px) {
+    height: 325px;
+    margin: 10px 0px;
+  }
 }
 
 .person__qoute {
@@ -336,7 +340,17 @@
   color: #fff;
   p {
     margin: 0;
-  } 
+  }
+  @media (max-width: 576px) {
+    height: 100px;
+    background-position: bottom;
+    h4 {
+      font-size: 13px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
 }
 
 // Gallery
