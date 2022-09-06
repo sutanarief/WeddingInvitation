@@ -13,8 +13,6 @@ const NavigationBar = () => {
     });
   }, []);
 
-  console.log(scroll);
-
   return (
     <>
       <div className={`bg-navbar ${scroll ? 'bg-navbar-open' : ''}`}></div>

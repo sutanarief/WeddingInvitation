@@ -33,6 +33,10 @@ const Person = () => {
               </p>
             </div>
           </div>
+          <div className='person__qoute-mobile mb-4'>
+            <h4>Pratiwi Rudiansyah A.Md.A.B</h4>
+            <p>Putri Pertama dari Bpk Rudy Hartono dan Ibu Partinah Landjar</p>
+          </div>
         </Col>
         <Col md={6}>
           <div
@@ -46,6 +50,12 @@ const Person = () => {
                 Zuchrotin
               </p>
             </div>
+          </div>
+          <div className='person__qoute-mobile'>
+            <h4>Muhammad Shohib</h4>
+            <p>
+              Putra ke Terakhir dari Alm. Bph H. Ngateman dan Ibu Hj. Zuchrotin
+            </p>
           </div>
         </Col>
       </Row>

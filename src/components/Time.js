@@ -16,6 +16,23 @@ const Time = () => {
   const [hours, setHours] = useState();
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
+  const [scroll, setScroll] = useState({
+    time: false,
+    thank: false,
+    akad: false,
+  });
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll({
+        time: window.scrollY > 150,
+        thank: window.scrollY > 200,
+        akad: window.scrollY > 250,
+      });
+    });
+  }, []);
+
+  console.log('ieu', scroll);
 
   const countDownDate = new Date('Sept 18, 2022 08:00:00').getTime();
   const getTimeUntil = () => {
@@ -51,7 +68,11 @@ const Time = () => {
   };
   return (
     <>
-      <div className='time-container'>
+      <div
+        className={`time-container ${
+          scroll.time ? 'time-container__open' : ''
+        }`}
+      >
         <div className='time__box'>
           <span className='time__number'>{formatter(days)}</span>
         </div>
@@ -65,7 +86,11 @@ const Time = () => {
           <span className='time__number'>{formatter(seconds)}</span>
         </div>
       </div>
-      <div className='time-container'>
+      <div
+        className={`time-container ${
+          scroll.time ? 'time-container__open' : ''
+        }`}
+      >
         <div className='time__date'>
           <span className='text__date'>Days</span>
         </div>
@@ -79,7 +104,7 @@ const Time = () => {
           <span className='text__date'>Seconds</span>
         </div>
       </div>
-      <div className='thankyou'>
+      <div className={`thankyou ${scroll.thank ? 'translate-y__open' : ''}`}>
         <div>
           <b>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</b>
           <br />
@@ -91,10 +116,14 @@ const Time = () => {
         </div>
       </div>
       <div className='akad pb-5 pt-3'>
-        <div className='akad-header pb-2'>
+        <div
+          className={`akad-header pb-2 ${
+            scroll.akad ? 'akad-header__open' : ''
+          }`}
+        >
           <h2>Akad dan Resepsi</h2>
         </div>
-        <div className='mt-1'>
+        <div className={`mt-1 cards ${scroll.akad ? 'cards__open' : ''}`}>
           <Row>
             <Col md={6} sm={12}>
               <Card className='p-3 bg-brown text-light mb-2'>

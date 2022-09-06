@@ -23,9 +23,10 @@
 
 .background-time__container {
     position: relative;
+    background: #fff;
     .background-time {
         padding: 20px;
-        background: #fff;
+        transition: all .3s;
     }
 }
 
