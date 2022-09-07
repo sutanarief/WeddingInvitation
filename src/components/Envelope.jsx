@@ -46,7 +46,7 @@ const Envelope = ({getMessages}) => {
               <img src={BCALogo} />
             </div>
             <div className="bank-info mt-3">
-              <h5 className="mb-1">Pratiwi Rudiansyah</h5>
+              <h5 className="mb-1">a/n Pratiwi Rudiansyah</h5>
               <h5 className="mb-3">{state.bca}</h5>
               <button
                 className="btn btn-outline-light"
@@ -65,7 +65,7 @@ const Envelope = ({getMessages}) => {
               <img src={DanaLogo} />
             </div>
             <div className="bank-info mt-3">
-              <h5 className="mb-1">Pratiwi Rudiansyah</h5>
+              <h5 className="mb-1">a/n Pratiwi Rudiansyah</h5>
               <h5 className="mb-3">{state.dana}</h5>
               <Col>
                 <button
@@ -90,17 +90,17 @@ const Envelope = ({getMessages}) => {
           <Card className="bg-white pb-3 mt-3">
             <div className="bank-logo bg-dark">
               <h4 className="text-light">
-                <FontAwesomeIcon icon={faMap} /> Alamat
+                <FontAwesomeIcon icon={faMap} /> Alamat Penerimaan Hadiah
               </h4>
             </div>
             <div className="bank-info mt-3">
               <h5 className="mb-1">{alamat}</h5>
-              <button
+              {/* <button
                 className="btn btn-outline-dark mt-3"
                 onClick={() => copyToClipboard(alamat, "Alamat telah disalin")}
               >
                 <FontAwesomeIcon icon={faCopy} /> Salin Alamat
-              </button>
+              </button> */}
             </div>
           </Card>
         </Col>

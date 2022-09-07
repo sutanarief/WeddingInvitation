@@ -46,7 +46,7 @@ const Person = () => {
             <div className='person__qoute'>
               <h4>Muhammad Shohib</h4>
               <p>
-                Putra ke Terakhir dari Alm. Bph H. Ngateman dan Ibu Hj.
+                Putra ke Terakhir dari Alm. Bpk H. Ngateman dan Ibu Hj.
                 Zuchrotin
               </p>
             </div>

@@ -7,7 +7,6 @@ const Footer = () => {
   return (
     <Fragment>
       <div className='footer'>
-        <h1>Sampai Jumpa Di Hari Bahagia Kami</h1>
         <div className='footer-surat'>
           <h3>QS. Ar-Rum Ayat 21</h3>
           <p>
@@ -17,6 +16,10 @@ const Footer = () => {
             kasih dan sayang. Sungguh, pada yang demikian itu benar-benar
             terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
           </p>
+        </div>
+        <div className='footer-salam'>
+          <h3>"Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/I berkenan hadir untuk memberikan do'a restu kepada kedua mempelai"</h3>
+          <h2>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</h2>
         </div>
       </div>
       <div className='copyright'>
@@ -32,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='author'>
-          <span>Copyright @ Achmad Fajar 2022</span>
+          <span>Copyright @ Fantastic Four</span>
         </div>
       </div>
     </Fragment>
