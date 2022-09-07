@@ -25,7 +25,7 @@ const Welcome = ({ playMusic }) => {
           <span className='name-to'>{guest}</span>
         </div>
       )}
-      <div className="mt-5">
+      <div className={guest ? 'mt-3' : 'mt-5'}>
         <button className="btn btn-light" onClick={() => handleOpen()}>
           Buka Undangan
         </button>
