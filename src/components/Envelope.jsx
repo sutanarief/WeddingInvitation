@@ -80,7 +80,7 @@ const Envelope = ({getMessages}) => {
                   className="btn btn-outline-light"
                   onClick={() => urlDana()}
                 >
-                  <img src={DanaIcon} style={{width: '15px', height: '15px', borderRadius: '5px', marginBottom: '2px'}} /> Buka Aplikasi Dana
+                  <img src={DanaIcon} style={{width: '15px', height: '15px', borderRadius: '5px', marginBottom: '2px'}} /> Buka Dana
                 </button>
               </Col>
             </div>
