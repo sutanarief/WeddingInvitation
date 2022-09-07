@@ -32,7 +32,7 @@ const Gallery = () => {
   return (
     <Fragment>
       <div className='pb-3 gallery-header'>
-        <h2 className='text-light'>Galeri</h2>
+        <h2 className='text-black'>Galeri</h2>
       </div>
       <Carousel
         responsive={responsive}

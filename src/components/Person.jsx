@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 import Rings from '../assets/wedding-rings.png';
-import MempelaiWanita from '../assets/photo-2.JPG';
+import MempelaiWanita from '../assets/photo-output-tiwi.jpg';
 import MempelaiPria from '../assets/photo-3.JPG';
 
 const Person = () => {
@@ -46,7 +46,7 @@ const Person = () => {
             <div className='person__qoute'>
               <h4>Muhammad Shohib</h4>
               <p>
-                Putra ke Terakhir dari Alm. Bpk H. Ngateman dan Ibu Hj.
+                Putra Terakhir dari Alm. Bpk H. Ngateman dan Ibu Hj.
                 Zuchrotin
               </p>
             </div>
@@ -54,7 +54,7 @@ const Person = () => {
           <div className='person__qoute-mobile'>
             <h4>Muhammad Shohib</h4>
             <p>
-              Putra ke Terakhir dari Alm. Bph H. Ngateman dan Ibu Hj. Zuchrotin
+              Putra Terakhir dari Alm. Bpk H. Ngateman dan Ibu Hj. Zuchrotin
             </p>
           </div>
         </Col>

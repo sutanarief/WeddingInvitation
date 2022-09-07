@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <Fragment>
       <div className='footer'>
-        <div className='footer-surat'>
+        {/* <div className='footer-surat'>
           <h3>QS. Ar-Rum Ayat 21</h3>
           <p>
             Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
@@ -16,7 +16,7 @@ const Footer = () => {
             kasih dan sayang. Sungguh, pada yang demikian itu benar-benar
             terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
           </p>
-        </div>
+        </div> */}
         <div className='footer-salam'>
           <h3>"Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/I berkenan hadir untuk memberikan do'a restu kepada kedua mempelai"</h3>
           <h2>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</h2>

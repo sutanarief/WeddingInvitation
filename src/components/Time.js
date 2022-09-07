@@ -32,7 +32,7 @@ const Time = () => {
     });
   }, []);
 
-  console.log('ieu', scroll);
+  // console.log('ieu', scroll);
 
   const countDownDate = new Date('Sept 18, 2022 08:00:00').getTime();
   const getTimeUntil = () => {
@@ -126,7 +126,7 @@ const Time = () => {
         <div className={`mt-1 cards ${scroll.akad ? 'cards__open' : ''}`}>
           <Row>
             <Col md={6} sm={12}>
-              <Card className='p-3 bg-brown text-light mb-2'>
+              <Card className='p-3 text-light mb-2 card-akad'>
                 <div className='card-akad-header'>
                   <h3>Akad</h3>
                 </div>
@@ -152,7 +152,7 @@ const Time = () => {
               </Card>
             </Col>
             <Col md={6} sm={12}>
-              <Card className='p-3 bg-brown text-light'>
+              <Card className='p-3 text-light card-akad'>
                 <div className='card-akad-header'>
                   <h3>Resepsi</h3>
                 </div>

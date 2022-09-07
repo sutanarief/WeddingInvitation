@@ -16,24 +16,25 @@ const Welcome = ({ playMusic }) => {
   };
 
   return (
-    <div className={`welcome text-white ${open ? 'open' : ''}`}>
+    <div className={`welcome text-white ${open ? "open" : ""}`}>
       <h1>Undangan Pernikahan</h1>
-      <img src={Love} className="welcome__love-logo" alt='Love' />
+      <img src={Love} className="welcome__love-logo" alt="Love" />
       {guest && (
-        <div className='to'>
-          <span>Kepada </span>
-          <span>{guest}</span>
+        <div className="to">
+          <span>Kepada Yth.</span>
+          <span className='name-to'>{guest}</span>
         </div>
       )}
-      <p  style={{fontSize: '15px'}}>
-        Tanpa Mengurangi Rasa Hormat Kami Mengundang Anda Untuk Berhadir Di
-        Acara Pernikahan Kami.
-      </p>
-      <div className='mt-5'>
-        <button className='btn btn-light' onClick={() => handleOpen()}>
+      <div className="mt-5">
+        <button className="btn btn-light" onClick={() => handleOpen()}>
           Buka Undangan
         </button>
       </div>
+      <p style={{ fontSize: "15px" }}>
+        {/* Tanpa Mengurangi Rasa Hormat Kami Mengundang Anda Untuk Berhadir Di
+            Acara Pernikahan Kami. */}
+        *Mohon maaf apabila terdapat kesalahan nama/gelar
+      </p>
     </div>
   );
 };

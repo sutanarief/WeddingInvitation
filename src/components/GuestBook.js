@@ -102,7 +102,7 @@ const GuestBook = ({ getMessages }) => {
     setSelectedData(data);
   };
 
-  console.log(allMessages);
+  // console.log(allMessages);
 
   return (
     <div className='guest-book'>
